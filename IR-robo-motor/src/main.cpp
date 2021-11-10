@@ -1,6 +1,6 @@
 #include <Arduino.h>
+#include<Servo.h>
 
-#include <Servo.h>
 #define BUTTON 10
 #define BUTTON2 11
 Servo MotorLeft; 
@@ -62,7 +62,7 @@ button2 = digitalRead(BUTTON2);
         for (pos = 0; pos >= 180; pos += 1)
         { 
             
-            pos2 -1;
+            pos2 = pos2 -1;
             MotorLeft.write(pos2);
             MotorRight.write(pos);
             delay(15);            
