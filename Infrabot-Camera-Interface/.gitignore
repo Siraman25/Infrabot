@@ -1,0 +1,7 @@
+.pio
+.DS_Store
+.idea
+cmake-build-debug
+cmake-build-esp32cam
+CMakeLists.txt
+CMakeListsPrivate.txt
