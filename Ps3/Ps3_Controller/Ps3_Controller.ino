@@ -4,22 +4,27 @@
 int lX = 0;
 int rX = 0;
 int posR = 0;
+
 void onConnect()
 {
  Serial.println("IsConnected");
 }
+
 void notify(){
+ //***************************L2 & R2***************************************************?
+
+ 
+//****************************right stick***********************************************?
    lX =(Ps3.data.analog.stick.lx);
    rX =(Ps3.data.analog.stick.rx);
 
-
-   if(lX < -5 && posR < 180)
+if(lX < -5)
  {
   posR++;
   Serial.println(posR);
   delay(10);
  }
-              //cross right side
+//****************************cross right side*******************************************
 if( Ps3.data.button.cross ){
             Serial.println("Pressing the cross button");      //Pressing the cross button(X)
         }
@@ -35,6 +40,8 @@ if( Ps3.data.button.triangle ){
 if( Ps3.data.button.circle ){
             Serial.println("Pressing the circle button");     //Pressing the circle button
         }
+  //****************************cross right side*******************************************?
+
   
 }
 
