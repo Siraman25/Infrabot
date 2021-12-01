@@ -1,4 +1,4 @@
-movement= right joystick & cross left side
+movement= cross left side
 schooting = L2 & R2
 //features
 
