@@ -36,5 +36,7 @@ Package: CT
 ![Spannungsregler_DropoutVoltage](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_DropoutVoltage.png?raw=true)
 	
 Bei einem maximalen Ausgangsstrom von 3A und einer Abfallsspannung von 0,7V erreicht der Spannungsregler eine Temperatur von 100°. Da wir unseren aber mit einer höheren Abfallsspannung zurechtkommen muss, werden wir ohne Kühlung das thermische Limit von 125° überschreiten. Um eine thermische Zerstörung zu vermeiden verwende wir folgenden Kühler für den Spannungsregler: [507302B00000G](https://www.digikey.it/en/products/detail/507302B00000G/HS115-ND/5849?itemSeq=383854613). 
+
 ![Spannungsregler_Kühler](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_Kühler.png?raw=true)
+
 Dies ist ein Low-Profile Aluminium Kühlkörper, der 2,5W Leistung and die Umgebung abgibt.
