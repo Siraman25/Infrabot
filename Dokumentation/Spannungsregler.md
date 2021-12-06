@@ -44,13 +44,13 @@ Dies ist ein Low-Profile Aluminium Kühlkörper, der P<sub>Kühler</sub> = 2,5W 
 ## **Leistungsberechnung**
 	
 Thermischer Widerstand:
-![Spannungsregler_ThermischerWiderstand](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_ThermischerWiderstand.png?raw=true)
-	P = U x I
-	U = V<sub>In</sub> - V<sub>Out</sub>
-	V<sub>In</sub> = 6,6V
-	I = 2,5A
-	(6,6V - 5V) x 2,5A = 4W
-	4W - P<sub>Kühler</sub> = 1,5W
-	1,5W x 50°C/W = 75°C
-	T<sub>Umgebung</sub> $\approx$ 30°C
-	T<sub>Umgebung</sub> + 75°C = 105°C
+![Spannungsregler_ThermischerWiderstand](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_ThermischerWiderstand.png?raw=true)\
+P = U x I\
+U = V<sub>In</sub> - V<sub>Out</sub>\
+V<sub>In</sub> = 6,6V\
+I = 2,5A\
+(6,6V - 5V) x 2,5A = 4W\
+4W - P<sub>Kühler</sub> = 1,5W\
+1,5W x 50°C/W = 75°C\
+T<sub>Umgebung</sub> $\approx$ 30°C\
+T<sub>Umgebung</sub> + 75°C = 105°C
