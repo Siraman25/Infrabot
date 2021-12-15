@@ -52,5 +52,5 @@ I = 2,5A\
 (6,6V - 5V) x 2,5A = 4W\
 4W - P<sub>Kühler</sub> = 1,5W\
 1,5W x 50°C/W = 75°C\
-T<sub>Umgebung</sub> $\approx$ 30°C\
+T<sub>Umgebung</sub>≈ 30°C\
 T<sub>Umgebung</sub> + 75°C = 105°C
