@@ -1,5 +1,6 @@
-#include <Servo.h>
 #include <Ps3Controller.h>
+
+#include <Servo.h>
 
 int lX = 0;
 int lY = 0;
@@ -15,6 +16,11 @@ int ServoMerker = 0;
 int ServoMerker1 = 0;
 static const int servosPins[2] = {12, 14};
 Servo servos[2];
+
+void setServos(int SMerker1, int SMerker2) {
+  servos[0].write(SMerker1);
+  servos[1].write(SMerker2);
+}
 
 void onConnect()
 {
@@ -63,33 +69,29 @@ if(rY == 127){
    lX =(Ps3.data.analog.stick.lx);
    lY = (Ps3.data.analog.stick.ly);
 
-while(lX == -128){                       //robo nach links
-  Serial.println("nach links" + lX);
+if(lX == -128){                       //robo nach links
+  Serial.println("nach links");
     ServoMerker--;
     ServoMerker1++;
-    servos[0].write(ServoMerker);
-    servos[1].write(ServoMerker1);
+    setServos(ServoMerker, ServoMerker1);
       }
-while(lX == 127){
-   Serial.println("nach rechts" + lX); 
+if(lX == 127){
+   Serial.println("nach rechts"); 
     ServoMerker--;
     ServoMerker1++;
-    servos[0].write(ServoMerker);
-    servos[1].write(ServoMerker1); 
+    setServos(ServoMerker, ServoMerker1);   
       } 
- while(lY == -128){                       //robo nach links
-  Serial.println("nach vorne" + lY);
+ if(lY == -128){                       //robo nach links
+  Serial.println("nach vorne");
    ServoMerker++;
-   ServoMerker1++;    
-   servos[0].write(ServoMerker);
-   servos[1].write(ServoMerker1);
+   ServoMerker1++;
+   setServos(ServoMerker, ServoMerker1);
       }
-while(lY == 127){
-    Serial.println("nach hinten" + lY);  
+if(lY == 127){
+    Serial.println("nach hinten");  
     ServoMerker--;
     ServoMerker1--;
-    servos[0].write(ServoMerker);
-    servos[1].write(ServoMerker1);  
+    setServos(ServoMerker, ServoMerker1);  
       } 
 //****************************cross right side*******************************************
 if( Ps3.data.button.cross ){
