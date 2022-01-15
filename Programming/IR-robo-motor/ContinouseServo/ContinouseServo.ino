@@ -9,23 +9,53 @@ Servo servos[2];
 
 void setup() {
     Serial.begin(115200);
+    Serial.println("Start here");
 
     for(int i = 0; i < 2; ++i) {
+      Serial.println("For loop");
         if(!servos[i].attach(servosPins[i])) {
             Serial.print("Servo ");
             Serial.print(i);
-            Serial.println("attach error");
+            Serial.println("attach error");}}
+  Serial.println("StartServo");
+  
+  ServoMerker--;
+  servos[1].write(90);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+   ServoMerker--;
+    Serial.println("1");
+  servos[1].write(ServoMerker);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+  ServoMerker--;
+   Serial.println("1");
+  servos[1].write(ServoMerker);
+  Serial.println("1");
+ 
         }
-    }
-}
+
 
 void loop() {
-  ServoMerker--;
-  ServoMerker1--;
-  servos[0].write(ServoMerker1);
-  servos[1].write(ServoMerker);
-  delay(290);
-
+ 
+/*
   ServoMerker++;
   ServoMerker1++;
   servos[0].write(ServoMerker1);

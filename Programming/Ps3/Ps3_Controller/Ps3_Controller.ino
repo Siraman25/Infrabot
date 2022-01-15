@@ -5,6 +5,8 @@ int lX = 0;
 int lY = 0;
 int rX = 0;
 int rY = 0;
+#define LEDROT 14
+int gesch = 0;
 int posR = 0;
 int L1 = 0;
 int L2 = 0;
@@ -13,7 +15,7 @@ int R2 = 0;
 
 int ServoMerker = 0;
 int ServoMerker1 = 0;
-static const int servosPins[2] = {12, 14};
+static const int servosPins[2] = {12, 13};
 Servo servos[2];
 
 void onConnect()
@@ -22,6 +24,7 @@ void onConnect()
 }
 
 void notify(){
+  Serial.println("Mainloop repeat");
  //***************************L2 & R2***************************************************?
 
     if( abs(Ps3.event.analog_changed.button.l1)){
@@ -40,7 +43,14 @@ void notify(){
    if( abs(Ps3.event.analog_changed.button.r2) ){
        Serial.print("Pressing the right trigger button: ");
        Serial.println(Ps3.data.analog.button.r2, DEC);
+       
+            digitalWrite(LEDROT,HIGH);
    }
+           else
+        {
+          digitalWrite(LEDROT,LOW);
+        }  
+  
 //****************************right stick************************************************
 /*
    rX =(Ps3.data.analog.stick.rx);
@@ -60,41 +70,44 @@ if(rY == 127){
       } 
       */
  //****************************left stick***********************************************?
-   lX =(Ps3.data.analog.stick.lx);
-   lY = (Ps3.data.analog.stick.ly);
 
-while(lX == -128){                       //robo nach links
+Serial.println(Ps3.data.analog.stick.lx);
+Serial.println(Ps3.data.analog.stick.ly);
+
+if(Ps3.data.analog.stick.lx == -128){                       //robo nach links
   Serial.println("nach links" + lX);
-    ServoMerker--;
-    ServoMerker1++;
-    servos[0].write(ServoMerker);
-    servos[1].write(ServoMerker1);
+    servos[0].write(0);
+    servos[1].write(0);
       }
-while(lX == 127){
-   Serial.println("nach rechts" + lX); 
-    ServoMerker--;
-    ServoMerker1++;
-    servos[0].write(ServoMerker);
-    servos[1].write(ServoMerker1); 
-      } 
- while(lY == -128){                       //robo nach links
-  Serial.println("nach vorne" + lY);
-   ServoMerker++;
-   ServoMerker1++;    
-   servos[0].write(ServoMerker);
-   servos[1].write(ServoMerker1);
-      }
-while(lY == 127){
-    Serial.println("nach hinten" + lY);  
-    ServoMerker--;
-    ServoMerker1--;
-    servos[0].write(ServoMerker);
-    servos[1].write(ServoMerker1);  
-      } 
+        else if(Ps3.data.analog.stick.lx == 127){         //robo nach rechts
+         Serial.println("nach rechts" + lX);
+         
+          servos[0].write(180);
+          servos[1].write(180); 
+            } 
+        else if(Ps3.data.analog.stick.ly == -128){         //robo nach vorne                  
+        //Serial.println("nach vorne" + lY); 
+    servos[0].write(0);
+    servos[1].write(180);
+            } 
+        else if(Ps3.data.analog.stick.ly >= 127){           //robo nach hinten
+          Serial.println("nach hinten" + lY);  
+          
+          servos[0].write(180);
+          servos[1].write(0);  
+            }
+        else
+            {
+            servos[0].write(90);
+            servos[1].write(90);  
+            }
+          
+     
 //****************************cross right side*******************************************
 if( Ps3.data.button.cross ){
             Serial.println("Pressing the cross button");      //Pressing the cross button(X)
         }
+
 
 if( Ps3.data.button.square ){
             Serial.println("Pressing the square button");     //Pressing the square button([])
@@ -113,21 +126,27 @@ if( Ps3.data.button.circle ){
 }
 
 void setup() {
-  
+  //******************************servo***************************
+pinMode(LEDROT, OUTPUT);
+for(int i = 0; i < 2; ++i) {
+        if(!servos[i].attach(servosPins[i])) {
+        Serial.print("Servo ");
+        Serial.print(i);
+        Serial.println("attach error");
+        }
+    }
     Serial.begin(115200);
     Ps3.begin("00:13:a9:e0:cd:a9");
     Ps3.attachOnConnect(onConnect);
+    
+    
     Ps3.attach(notify);
+      
+    
+    
     Serial.println("Ready.");
 
-//******************************servo***************************
-for(int i = 0; i < 2; ++i) {
-        if(!servos[i].attach(servosPins[i])) {
-            Serial.print("Servo ");
-            Serial.print(i);
-            Serial.println("attach error");
-        }
-    }
+
 }
 
 void loop() 
