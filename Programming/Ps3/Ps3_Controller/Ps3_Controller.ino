@@ -5,7 +5,7 @@ int lX = 0;
 int lY = 0;
 int rX = 0;
 int rY = 0;
-#define LEDROT 14
+#define LEDROT 13
 int gesch = 0;
 int posR = 0;
 int L1 = 0;
@@ -15,7 +15,7 @@ int R2 = 0;
 
 int ServoMerker = 0;
 int ServoMerker1 = 0;
-static const int servosPins[2] = {12, 13};
+static const int servosPins[2] = {33, 13};
 Servo servos[2];
 
 void onConnect()
