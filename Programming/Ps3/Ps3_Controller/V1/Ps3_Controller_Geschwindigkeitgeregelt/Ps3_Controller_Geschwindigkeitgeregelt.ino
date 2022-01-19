@@ -76,25 +76,28 @@ Serial.println(Ps3.data.analog.stick.ly);
 
 if(Ps3.data.analog.stick.lx == -128){                       //robo nach links
   Serial.println("nach links" + lX);
-    servos[0].write(0);
-    servos[1].write(0);
+  gesch = 0,7*Ps3.data.analog.stick.lx + 90;
+    servos[0].write(gesch);
+    servos[1].write(gesch);
       }
         else if(Ps3.data.analog.stick.lx == 127){         //robo nach rechts
          Serial.println("nach rechts" + lX);
-         
-          servos[0].write(180);
-          servos[1].write(180); 
+         gesch = 0,7 * Ps3.data.analog.stick.lx + 90;
+          servos[0].write(gesch);
+          servos[1].write(gesch); 
             } 
         else if(Ps3.data.analog.stick.ly == -128){         //robo nach vorne                  
-        //Serial.println("nach vorne" + lY); 
-    servos[0].write(0);
-    servos[1].write(180);
+        Serial.println("nach vorne" + lY); 
+        gesch = 0,7 * Ps3.data.analog.stick.ly + 90;
+    servos[0].write(gesch);
+    servos[1].write(gesch);
             } 
         else if(Ps3.data.analog.stick.ly >= 127){           //robo nach hinten
-          Serial.println("nach hinten" + lY);  
+          Serial.println("nach hinten" + lY); 
+          gesch = 0,7 * Ps3.data.analog.stick.ly + 90;
           
-          servos[0].write(180);
-          servos[1].write(0);  
+          servos[0].write(gesch);
+          servos[1].write(gesch);  
             }
         else
             {
