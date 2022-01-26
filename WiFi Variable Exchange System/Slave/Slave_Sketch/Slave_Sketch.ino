@@ -15,7 +15,7 @@ IPAddress subnet(255, 255, 255, 0);
 IPAddress master(192, 168, 1, 110);
 
 WiFiServer SlaveServer(4080);
-WiFiClient SlaveClient;
+WiFiClient SlaveClient(4090);
 
 void connectToWireless() {
   while (WiFi.status() != WL_CONNECTED) {
@@ -39,21 +39,33 @@ void setup() {
   SlaveServer.begin();
 }
 
+int currentResult;
+
 void loop() {
   WiFiClient client1 = SlaveServer.available();
 
   if (client1) {
     // Read the command from the TCP client:
-    char command = client1.read();
+    //char command = client1.read();
     //Serial.print("Received command: ");
     //Serial.println(command);
-
-    if (command == '9') {
-      digitalWrite(LED, HIGH); // Turn LED on
-      Serial.println(command);
-    } else if (command == '0') {
-      digitalWrite(LED, LOW);  // Turn LED off
-      Serial.println(command);
+    char command = client1.read();
+    currentResult = command;
+    if (currentResult != 255) {
+      Serial.println(currentResult);
     }
+    
+
+//    if (command == '9') {
+//      digitalWrite(LED, HIGH); // Turn LED on
+//      Serial.println(command);
+//    } else if (command == '0') {
+//      digitalWrite(LED, LOW);  // Turn LED off
+//      Serial.println(command);
+//    } else if (command == '5') {
+//      Serial.println("Debug");
+//    } else {
+//      Serial.println(command);
+//    }
   }
 }

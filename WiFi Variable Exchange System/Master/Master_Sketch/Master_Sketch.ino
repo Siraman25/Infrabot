@@ -3,6 +3,7 @@
 #define BUTTON 2
 #define STATUSLED 3
 #define SERVER_PORT 4080
+#define SERVER2_PORT 4090
 
 #include <WiFi.h>
 
@@ -15,8 +16,8 @@ IPAddress subnet(255, 255, 255, 0);
 
 IPAddress slave(192, 168, 1, 111);
 
-WiFiServer MasterServer; // PORT IS NEEDED!! (With syntax: WiFi Server MasterServer(PORT))
-WiFiClient MasterClient;
+WiFiServer MasterServer(SERVER2_PORT); // PORT IS NEEDED!! (With syntax: WiFi Server MasterServer(PORT))
+WiFiClient MasterClient = MasterServer.available();
 
 void connectToWireless() {
   while (WiFi.status() != WL_CONNECTED) {
@@ -59,8 +60,11 @@ unsigned long timestamp;
 unsigned long timestampRelease;
 const int DELAY = 300;
 
+int currentResult = 13;
+char  currentResultInChar;
+
 void loop() {
-    delay(1000);
+    //delay(1000);
     if (!MasterClient.connected()) {
     Serial.println("Connection is disconnected");
     MasterClient.stop();
@@ -74,30 +78,34 @@ void loop() {
   if (MasterClient.connected()) {
     digitalWrite(STATUSLED, HIGH);
   } else {digitalWrite(STATUSLED, LOW);}
-    
-  
-  oldPress = currentPress;
-  currentPress = digitalRead(BUTTON);
 
-  if (oldPress == 0 && currentPress == 1) {
-    if (millis() - timestamp > DELAY) {
-      
-      Serial.println("PRESSED");
-      MasterClient.write('9');
-      MasterClient.flush();
-      
-      timestamp = millis();
-    }
+  if (Serial.available() > 0) {
+    currentResult = Serial.readString().toInt();
   }
-  if (oldPress == 1 && currentPress == 0) {
-    if (millis() - timestampRelease > DELAY) {
-      
-      Serial.println("RELEASED");
-      MasterClient.write('0');
-      MasterClient.flush();
-      
-      timestampRelease = millis();
-    }
-  }
+
+  
+  currentResultInChar = currentResult;
+  MasterClient.write(currentResultInChar);
+
+//  if (oldPress == 0 && currentPress == 1) {
+//    if (millis() - timestamp > DELAY) {
+//      
+//      Serial.println("PRESSED");
+//      MasterClient.println('9');
+//      MasterClient.flush();
+//      
+//      timestamp = millis();
+//    }
+//  }
+//  if (oldPress == 1 && currentPress == 0) {
+//    if (millis() - timestampRelease > DELAY) {
+//      
+//      Serial.println("RELEASED");
+//      MasterClient.println('0');
+//      MasterClient.flush();
+//      
+//      timestampRelease = millis();
+//    }
+//  }
 
 }
