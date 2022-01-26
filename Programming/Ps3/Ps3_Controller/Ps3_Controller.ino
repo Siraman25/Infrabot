@@ -18,7 +18,7 @@ int ServoMerker1 = 0;
 static const int servosPins[2] = {33, 13};
 Servo servos[2];
 
-void onConnect()
+void onConnect()        
 {
  Serial.println("IsConnected");
 }
@@ -37,20 +37,11 @@ void notify(){
 
    if( abs(Ps3.event.analog_changed.button.l2) ){
        Serial.print("Pressing the left trigger button: ");
-       Serial.println(Ps3.data.analog.button.l2, DEC);
    }
 
    if( abs(Ps3.event.analog_changed.button.r2) ){
        Serial.print("Pressing the right trigger button: ");
-       Serial.println(Ps3.data.analog.button.r2, DEC);
-       
-            digitalWrite(LEDROT,HIGH);
-   }
-           else
-        {
-          digitalWrite(LEDROT,LOW);
-        }  
-  
+     
 //****************************right stick************************************************
 /*
    rX =(Ps3.data.analog.stick.rx);
@@ -127,7 +118,7 @@ if( Ps3.data.button.circle ){
 
 void setup() {
   //******************************servo***************************
-pinMode(LEDROT, OUTPUT);
+
 for(int i = 0; i < 2; ++i) {
         if(!servos[i].attach(servosPins[i])) {
         Serial.print("Servo ");
@@ -138,8 +129,6 @@ for(int i = 0; i < 2; ++i) {
     Serial.begin(115200);
     Ps3.begin("00:13:a9:e0:cd:a9");
     Ps3.attachOnConnect(onConnect);
-    
-    
     Ps3.attach(notify);
       
     
