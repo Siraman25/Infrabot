@@ -1,0 +1,5 @@
+movement= right joystick & cross left side
+schooting = L2 & R2
+//features
+
+special ability = square & triangle & cross & circle / button left sides
