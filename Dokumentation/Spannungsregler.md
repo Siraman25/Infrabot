@@ -37,7 +37,7 @@ Package: CT
 	
 Bei einem maximalen Ausgangsstrom von 3A und einer Abfallsspannung von 0,7V erreicht der Spannungsregler eine Temperatur von 100°. Da wir unseren aber mit einer höheren Abfallsspannung zurechtkommen muss, werden wir ohne Kühlung das thermische Limit von 125° überschreiten. Um eine thermische Zerstörung zu vermeiden verwende wir einen Kühler für das Package TO-220. 
 
-![Spannungsregler_Kühler](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_Kühler.png?raw=true)
+![Spannungsregler_Kühler](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_K%C3%BChler.jpg?raw=true)
 
 Dies ist ein Low-Profile Aluminium Kühlkörper, der P<sub>Kühler</sub> = 2,5W Leistung and die Umgebung abgibt.
 	
