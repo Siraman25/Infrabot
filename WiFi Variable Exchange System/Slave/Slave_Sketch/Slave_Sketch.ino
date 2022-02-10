@@ -1,7 +1,7 @@
 // Slave-Sketch
 
 #define LED 10
-#define SERVER_PORT 4080
+#define SERVER_PORT 45550
 
 #include <WiFi.h>
 
@@ -14,8 +14,8 @@ IPAddress subnet(255, 255, 255, 0);
 
 IPAddress master(192, 168, 1, 110);
 
-WiFiServer SlaveServer(4080);
-WiFiClient SlaveClient(4090);
+WiFiServer SlaveServer(SERVER_PORT);
+WiFiClient SlaveClient = SlaveServer.available();
 
 void connectToWireless() {
   while (WiFi.status() != WL_CONNECTED) {
@@ -42,30 +42,17 @@ void setup() {
 int currentResult;
 
 void loop() {
-  WiFiClient client1 = SlaveServer.available();
+  WiFiClient Client = SlaveServer.available();
 
-  if (client1) {
+  if (Client) {
     // Read the command from the TCP client:
     //char command = client1.read();
     //Serial.print("Received command: ");
     //Serial.println(command);
-    char command = client1.read();
+    char command = Client.read();
     currentResult = command;
     if (currentResult != 255) {
       Serial.println(currentResult);
     }
-    
-
-//    if (command == '9') {
-//      digitalWrite(LED, HIGH); // Turn LED on
-//      Serial.println(command);
-//    } else if (command == '0') {
-//      digitalWrite(LED, LOW);  // Turn LED off
-//      Serial.println(command);
-//    } else if (command == '5') {
-//      Serial.println("Debug");
-//    } else {
-//      Serial.println(command);
-//    }
   }
 }
