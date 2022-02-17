@@ -5,7 +5,6 @@ int lX = 0;
 int lY = 0;
 int rX = 0;
 int rY = 0;
-#define LEDROT 13
 int gesch = 0;
 int posR = 0;
 int L1 = 0;
@@ -18,13 +17,8 @@ int ServoMerker1 = 0;
 static const int servosPins[2] = {12, 13};
 Servo servos[2];
 
-void onConnect()        
-{
- Serial.println("IsConnected");
-}
 
 void notify(){
-  Serial.println("Mainloop repeat");
  //***************************L2 & R2***************************************************?
 
     if( abs(Ps3.event.analog_changed.button.l1)){
@@ -41,7 +35,7 @@ void notify(){
 
    if( abs(Ps3.event.analog_changed.button.r2) ){
        Serial.print("Pressing the right trigger button: ");
-     
+   }
 //****************************right stick************************************************
 /*
    rX =(Ps3.data.analog.stick.rx);
@@ -112,38 +106,38 @@ if( Ps3.data.button.circle ){
             Serial.println("Pressing the circle button");     //Pressing the circle button
         }
   //****************************cross right side*******************************************?
+   
+}  
 
-  
-}
 
-void setup() {
-  //******************************servo***************************
-
-for(int i = 0; i < 2; ++i) {
+void setup(){
+      Serial.begin(115200);
+    Ps3.attach(notify);
+    Ps3.attachOnConnect(onConnect); 
+    Ps3.begin("00:13:a9:e0:cd:a9");
+    
+    Serial.println("Ready.");
+   //******************************servo***************************
+    for(int i = 0; i < 2; ++i) {
         if(!servos[i].attach(servosPins[i])) {
         Serial.print("Servo ");
         Serial.print(i);
         Serial.println("attach error");
         }
     }
-    Serial.begin(115200);
-    Ps3.begin("00:13:a9:e0:cd:a9");
-    Ps3.attachOnConnect(onConnect);
-    Ps3.attach(notify);
-      
-    
-    
-    Serial.println("Ready.");
+}
 
-
+void onConnect()        
+{
+ Serial.println("IsConnected");
 }
 
 void loop() 
 {
   
-if(Ps3.isConnected()){
+if(Ps3.isConnected())
+         {
             return;
             delay(1000);
          }
-
 }
