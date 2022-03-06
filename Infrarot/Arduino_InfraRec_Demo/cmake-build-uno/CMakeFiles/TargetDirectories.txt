@@ -1,0 +1,5 @@
+/home/aris/Schule/TFO Meran Oskar von Miller/Schulefiles/4BEL/FÜLA/Infrabot/Infrarot/Arduino_InfraRec_Demo/cmake-build-uno/CMakeFiles/rebuild_cache.dir
+/home/aris/Schule/TFO Meran Oskar von Miller/Schulefiles/4BEL/FÜLA/Infrabot/Infrarot/Arduino_InfraRec_Demo/cmake-build-uno/CMakeFiles/Production.dir
+/home/aris/Schule/TFO Meran Oskar von Miller/Schulefiles/4BEL/FÜLA/Infrabot/Infrarot/Arduino_InfraRec_Demo/cmake-build-uno/CMakeFiles/edit_cache.dir
+/home/aris/Schule/TFO Meran Oskar von Miller/Schulefiles/4BEL/FÜLA/Infrabot/Infrarot/Arduino_InfraRec_Demo/cmake-build-uno/CMakeFiles/Debug.dir
+/home/aris/Schule/TFO Meran Oskar von Miller/Schulefiles/4BEL/FÜLA/Infrabot/Infrarot/Arduino_InfraRec_Demo/cmake-build-uno/CMakeFiles/Z_DUMMY_TARGET.dir

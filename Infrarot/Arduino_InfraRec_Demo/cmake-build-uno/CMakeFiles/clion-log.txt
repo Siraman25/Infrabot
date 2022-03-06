@@ -1,0 +1,4 @@
+/home/aris/JetBrains/Clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=uno -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" "/home/aris/Schule/TFO Meran Oskar von Miller/Schulefiles/4BEL/FÜLA/Infrabot/Infrarot/Arduino_InfraRec_Demo"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/aris/Schule/TFO Meran Oskar von Miller/Schulefiles/4BEL/FÜLA/Infrabot/Infrarot/Arduino_InfraRec_Demo/cmake-build-uno

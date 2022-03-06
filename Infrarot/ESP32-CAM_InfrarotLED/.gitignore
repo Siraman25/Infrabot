@@ -1,0 +1,4 @@
+.pio
+cmake-build-debug
+cmake-build-esp32cam
+.idea
