@@ -1,0 +1,39 @@
+PINOUT Infrabots:
+
+ESP32-S2
+GND -> GND_PLATINE
+5V -> 5V_PLATINE
+3.3V -> 3.3V_PLATINE
+38 -> RESET_PIN_IN
+39 -> IR_REC
+40 -> IR_SEND
+41 -> HWSerial_0       (RX S2, TX CAM)
+42 -> HWSerial_1       (TX S2, RX CAM)
+
+ESP32-CAM
+GND -> GND_PLATINE
+U0T -> SERIAL_TX_UPLOAD
+U0R -> SERIAL_RX_UPLOAD
+IO0 -> PIN0_UPLOAD
+3.3V -> 3.3V_PLATINE
+IO2 -> SERVO1
+IO14 -> HWSerial_0      (TX S2, RX CAM)
+IO13 -> HWSerial_1      (RX S2, TX CAM)
+IO12 -> SERVO2
+5V -> 5V_PLATINE
+
+Alle GNDs der einzelnen Boards müssen sicherheitshalber auf der Platine verbunden werden.
+
+
+Weitere Verbindungen:
+IR_SEND:
+IR_SEND -> BC337 (Transistor) Base // 3.3V_PLATINE -> BC337 Collector // BC337 Emitter -> IR-LED -> 20 OHM-Widerstand (2*10 Ohm) -> GND_PLATINE
+
+IR_REC:
+IR-Receiver+ -> 5V_PLATINE // IR-Receiver- -> GND_PLATINE // IR-Receiver_DATA -> IR_REC
+
+SERVOS:
+SERVO+ -> 5V_PLATINE // SERVO- -> GND_PLATINE // SERVO_DATA -> SERVOxx
+
+RESET_PIN_IN:
+GND_PLATINE -> 10kOhm -> RESET_PIN_IN (Pull-down-Widerstand) // Switch-button+ -> 5V_PLATINE // Switch-button- -> RESET_PIN_IN
