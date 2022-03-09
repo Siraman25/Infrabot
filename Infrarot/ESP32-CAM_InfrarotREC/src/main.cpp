@@ -52,6 +52,8 @@
 #endif
 
 volatile struct TinyIRReceiverCallbackDataStruct sCallbackData;
+volatile struct TinyIRReceiverCallbackDataStruct sCallbackData2;
+
 
 void setup()
 {
@@ -66,11 +68,12 @@ bool statusLED = false;
 
 void loop()
 {
-    if (sCallbackData.justWritten)
+    if (sCallbackData.justWritten || sCallbackData2.justWritten)
     {
         sCallbackData.justWritten = false;
-        if (sCallbackData.Command == 170) {
+        if (sCallbackData.Command == 170 || sCallbackData2.Command == 170) {
             Serial.println(sCallbackData.Command);
+            Serial.println(sCallbackData2.Command);
             statusLED = !statusLED;
         }
         Serial.println(sCallbackData.Command);

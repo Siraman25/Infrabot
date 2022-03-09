@@ -3,7 +3,7 @@
 #define MYPORT_TX 42
 #define MYPORT_RX 41
 
-#define IRLED 12
+#define IRLED 40
 
 #define stopSendTimeout 2000
 #define resetSendTimeout 5000
@@ -22,26 +22,31 @@ void setup() {
 
 char inByte = '0';
 
-void loop() {
-  if (lockIRSender) {
-        if ((millis() - infraRedSendTimestamp) >= resetSendTimeout) {
-            lockIRSender = false;
-        }
-        if ((millis() - infraRedSendTimestamp) < stopSendTimeout) {
-            InfraredLED.sendNEC(0xF00F55AA, 32);
-        }
-    }
-  
-
-  if (Serial1.available() > 0) {
-    Serial.println(Serial1.available());
-    inByte = Serial1.read();
-    Serial.println(inByte);
-    if (!lockIRSender) {  // TODO: Lock IRremote and send to LED
-        if (inByte == 'y') {
-            lockIRSender = true;
-            infraRedSendTimestamp = millis();
-        }
-    }
-  }
+void loop(){
+  InfraredLED.sendNEC(0xF00F55AA, 32);
+  delay(50);
 }
+
+//void loop() {
+//  if (lockIRSender) {
+//        if ((millis() - infraRedSendTimestamp) >= resetSendTimeout) {
+//            lockIRSender = false;
+//        }
+//        if ((millis() - infraRedSendTimestamp) < stopSendTimeout) {
+//            InfraredLED.sendNEC(0xF00F55AA, 32);
+//        }
+//    }
+//  
+//
+//  if (Serial1.available() > 0) {
+//    Serial.println(Serial1.available());
+//    inByte = Serial1.read();
+//    Serial.println(inByte);
+//    if (!lockIRSender) {  // TODO: Lock IRremote and send to LED
+//        if (inByte == 'y') {
+//            lockIRSender = true;
+//            infraRedSendTimestamp = millis();
+//        }
+//    }
+//  }
+//}
