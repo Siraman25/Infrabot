@@ -1,0 +1,6 @@
+- [ ]   extra Pins
+- [ ]   extra Leds (statusleds)
+- [ ]   virtual serial
+- [ ]   Vorwiedertsände berechnen
+- [ ]   pins für buzzers
+- [ ]   Löcher an den Ecken zur Fixierung der Platine

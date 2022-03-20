@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "37886bb0f6e23ab1",
+    "type": "split",
+    "children": [
+      {
+        "id": "0b6d53b7415f089d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "ToDoList.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "771174e88b2cb601",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc28dfa94f367aae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d77d48ff81a6f2a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e5ab6bcc092eda3f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "63b521a56fec654d",
+    "type": "split",
+    "children": [
+      {
+        "id": "af11949c911de67a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80f4a1c35a7bc390",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ToDoList.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "0b6d53b7415f089d",
+  "lastOpenFiles": [
+    "ToDoList.md"
+  ]
+}
