@@ -32,17 +32,17 @@ Package: CT
 
 ## Berechnung des Spannungsteilers
 **Gegeben:**
-U<sub>OUT</sub>= 5V
-U<sub>R1</sub>= 3,75V
-U<sub>R2</sub>= 1,25V
+U<sub>OUT</sub>= 5V\
+U<sub>R1</sub>= 3,75V\
+U<sub>R2</sub>= 1,25V\
 I<sub>SENSE</sub>= 150nA
 	
 **Wahl:**
 R<sub>1</sub>= 100kΩ
 	
 **Rechnung:**
-	I<sub>R1</sub> = U<sub>R1</sub> : R<sub>1</sub> -> 3,75V : 100kΩ = 37,5µA
-	I<sub>R2</sub> = I<sub>R1</sub> - I<sub>SENSE</sub> -> 37,5µA - 150nA = 37,35µA
+	I<sub>R1</sub> = U<sub>R1</sub> : R<sub>1</sub> -> 3,75V : 100kΩ = 37,5µA\
+	I<sub>R2</sub> = I<sub>R1</sub> - I<sub>SENSE</sub> -> 37,5µA - 150nA = 37,35µA\
 	R<sub>2</sub> = U<sub>R2</sub> : I<sub>R2</sub> -> 1,25V : 37,35µA = 33467,202Ω ≈ 33kΩ
 	
 **Probe:**
@@ -61,7 +61,7 @@ Dies ist ein Low-Profile Aluminium Kühlkörper, der P<sub>Kühler</sub> = 3W Le
 ## **Leistungsberechnung**
 	
 Thermischer Widerstand:
-![Spannungsregler_ThermischerWiderstand](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_ThermischerWiderstand.png?raw=true)\
+![Spannungsregler_ThermischerWiderstand](https://github.com/Siraman25/Infrabot/blob/master/Dokumentation/Bilder/Spannungsregler/Spannungsregler_ThermischerWiderstand.png?raw=true)
 	
 **Gegeben:**
 	V<sub>In</sub> = 6,7V\
