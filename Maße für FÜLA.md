@@ -1,0 +1,25 @@
+- Platine:
+	- Länge= 127mm
+	- Breite= 65mm
+	- Höhe= 2mm
+- Hinterrad:
+	- Durchmesser<sub>GROẞ</sub>= 70mm
+	-  Durchmesser<sub>KLEIN</sub>= 52mm
+	-  Höhe= 30mm
+	-  Durchmesser Kugel= 40mm
+-  Servo:
+	-  Länge= 23mm
+	-  Breite= 22mm
+	-  Höhe= 12mm
+		-  Ecken:
+			-  Länge= 3mm
+			-  Breite= 5mm
+			-  Höhe= 12mm
+			-  Versatz Vorderkante= 4mm
+-  Vorderrad:
+	-  Durchmesser= 60mm
+	-  Breite= 7mm
+-  Batteriebehälter
+	-  Länge= 75mm
+	-  Breit= 40mm
+	-  Höhe= 18mm
