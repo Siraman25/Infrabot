@@ -6,6 +6,7 @@
       {
         "id": "ca8cce4911eb6901",
         "type": "leaf",
+        "dimension": 50.92592592592593,
         "state": {
           "type": "markdown",
           "state": {
@@ -17,6 +18,7 @@
       {
         "id": "2aa9cb7d4c86094d",
         "type": "leaf",
+        "dimension": 49.074074074074076,
         "state": {
           "type": "markdown",
           "state": {
@@ -63,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 288
   },
   "right": {
     "id": "3aa23ff96ce11011",
@@ -97,7 +99,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "ca8cce4911eb6901",
+  "active": "2aa9cb7d4c86094d",
   "lastOpenFiles": [
     "README.md"
   ]
