@@ -7,7 +7,8 @@ Die Räder werden mit zwei 360°-Servomotoren angetriebn. Diese besitzen drei Pi
 
 ## **Beschreibung**
 ##### Servo
-![[Servo.jpg]]
+![[Servo.jpg|200]] 
+
 ##### Batteriehalterung
 ![[Batteriehalter.jpg]]
 ##### Powermanagement
