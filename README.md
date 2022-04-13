@@ -7,20 +7,20 @@ Die Räder werden mit zwei 360°-Servomotoren angetriebn. Diese besitzen drei Pi
 
 ## **Beschreibung**
 ##### Servo
-<img src="Z:\Schule\4BEL\Füla\Infrabot\Dokumentation\Bilder\Bauteile\Servo.jpg"  style="height: 400px; width:300px;"/>
+<img src="Infrabot\Dokumentation\Bilder\Bauteile\Servo.jpg"  style="height: 400px; width:300px;"/>
 
 <code>Name</code>: Continous servo FS90R
 <code>Preis</code>: € 21,81	(4 Stück)
 <code>Link</code>: [Click-here](https://it.aliexpress.com/item/32984667875.html?gatewayAdapt=glo2ita&spm=a2g0o.productlist.0.0.757d6a76EX7cRW&algo_pvid=e50159a6-6599-4880-aa28-8534ffaa9490&algo_exp_id=e50159a6-6599-4880-aa28-8534ffaa9490-0&pdp_ext_f=%7B%22sku_id%22%3A%2266784030012%22%7D)
 ##### Batteriehalterung
-<img src="Z:\Schule\4BEL\Füla\Infrabot\Dokumentation\Bilder\Bauteile\Batteriehalter.jpg"  style="height: 400px; width:300px;"/>
+<img src="Dokumentation\Bilder\Bauteile\Batteriehalter.jpg"  style="height: 400px; width:300px;"/>
 
 <code>Name</code>: 
 <code>Preis</code>: 
 <code>Link</code>: [Click-here]()
 ##### Powermanagement
 
-<img src="Z:\Schule\4BEL\Füla\Infrabot\Dokumentation\Bilder\Bauteile\Baumanagement.jpg"  style="height: 400px; width:300px;"/>
+<img src="\Infrabot\Dokumentation\Bilder\Bauteile\Baumanagement.jpg"  style="height: 400px; width:300px;"/>
 
 <code>Name</code>: 
 <code>Preis</code>: 
