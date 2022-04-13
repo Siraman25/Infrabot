@@ -8,7 +8,7 @@ Die Räder werden mit zwei 360°-Servomotoren angetriebn. Diese besitzen drei Pi
 ## **Beschreibung**
 ##### Servo
 ![[Servo.jpg|200]] 
-
+Continous servo FS90R
 ##### Batteriehalterung
 ![[Batteriehalter.jpg]]
 ##### Powermanagement
