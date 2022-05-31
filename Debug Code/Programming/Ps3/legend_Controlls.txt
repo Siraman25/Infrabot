@@ -1,0 +1,2 @@
+movement= cross left side
+schooting = L2 & R2
